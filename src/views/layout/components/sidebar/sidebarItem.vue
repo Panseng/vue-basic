@@ -40,5 +40,3 @@ export default {
   width: 50px !important;
 }
 </style>
-
-

@@ -16,13 +16,12 @@ export default {
     ...mapMutations([
       'troggleSidebar'
     ]),
-    troggleSideNav() {
+    troggleSideNav () {
       this.troggleSidebar()
     }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .bread-crumb {
