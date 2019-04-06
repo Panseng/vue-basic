@@ -1,5 +1,13 @@
 <template>
-  <el-submenu v-if="item.children" :index="item.path">
+
+  <router-link v-if="onlyOneShowing(item)" :to="{name: item.name}">
+    <el-menu-item :index="item.path">
+      <i v-if="item.meta.icon" :class="item.meta.icon"></i>
+      <span slot="title">{{ item.meta.title }}</span>
+    </el-menu-item>
+  </router-link>
+
+  <el-submenu v-else :index="item.path">
     <template slot="title">
       <i v-if="item.meta.icon" :class="item.meta.icon"></i>
       <span>{{ item.meta.title }}</span>
@@ -10,13 +18,6 @@
       :item="child"
       />
   </el-submenu>
-
-  <router-link v-else :to="{name: item.name}">
-    <el-menu-item :index="item.path">
-      <i v-if="item.meta.icon" :class="item.meta.icon"></i>
-      <span slot="title">{{ item.meta.title }}</span>
-    </el-menu-item>
-  </router-link>
 </template>
 
 <script>
@@ -27,12 +28,21 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    onlyOneShowing (item) {
+      if (!item.children) {
+        return true
+      } else if (item.children.length === 1) {
+        return true
+      }
+    }
   }
 }
 </script>
 
 <style>
-.el-submenu__title {
+.el-submenu__title, .el-tooltip {
   padding-left: 10px !important;
 }
 .el-menu--vertical {

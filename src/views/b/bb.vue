@@ -8,6 +8,7 @@
 @import '../../style/mixin.scss';
 @import '../../style/colours.scss';
 .container {
+  height: 100%;
   background-color: $yellow;
 }
 </style>

@@ -22,7 +22,7 @@ export default {
 @import '../../style/mixin.scss';
 .layout-container {
   @include clearfix;
-  position: relative;
+  position: absolute;
   @include wh(100%, 100%);
   display: flex;
   flex-direction: row;
@@ -45,4 +45,5 @@ export default {
     }
   }
 }
+
 </style>
