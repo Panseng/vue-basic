@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Layout from '@/views/layout'
-import Table from '@/views/table/table'
+import InlineEditTable from '@/views/table/inlineEditTable'
+import ComplexTable from '@/views/table/complexTable'
 
 import A from '@/views/a/a'
 import Ba from '@/views/b/ba'
@@ -23,10 +24,13 @@ export const basicRoutes = [
     children: [{
       path: 'inlineedittable',
       name: 'table',
-      component: Table,
+      component: InlineEditTable,
       meta: { title: '行内编辑' }
     }, {
-      path: ''
+      path: 'complextable',
+      name: 'complextable',
+      component: ComplexTable,
+      meta: { title: '复杂表格' }
     }
     ]
   },

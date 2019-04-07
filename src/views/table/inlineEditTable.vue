@@ -67,7 +67,7 @@ export default {
   data () {
     return {
       tableData: [],
-      loading:true
+      loading: true
     }
   },
   created () {
