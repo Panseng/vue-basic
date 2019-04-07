@@ -2,14 +2,18 @@
 
   <router-link v-if="onlyOneShowing(item)" :to="{name: item.name}">
     <el-menu-item :index="item.path">
-      <i v-if="item.meta.icon" :class="item.meta.icon"></i>
+      <svg v-if="item.meta.icon" class="icon" aria-hidden="true">
+        <use :href="item.meta.icon"></use>
+     </svg>
       <span slot="title">{{ item.meta.title }}</span>
     </el-menu-item>
   </router-link>
 
   <el-submenu v-else :index="item.path">
     <template slot="title">
-      <i v-if="item.meta.icon" :class="item.meta.icon"></i>
+      <svg v-if="item.meta.icon" class="icon" aria-hidden="true">
+        <use :href="item.meta.icon"></use>
+     </svg>
       <span>{{ item.meta.title }}</span>
     </template>
     <sidebar-item
@@ -21,6 +25,7 @@
 </template>
 
 <script>
+import '@/assets/icons/iconfont'
 export default {
   name: 'SidebarItem',
   props: {
@@ -42,11 +47,15 @@ export default {
 </script>
 
 <style>
-.el-submenu__title, .el-tooltip {
+.el-submenu__title, .el-tooltip, .el-menu-item {
   padding-left: 10px !important;
 }
 .el-menu--vertical {
   position: absolute !important;
   width: 50px !important;
+}
+.svg {
+  width: 1.5em;
+  height: 1.5em;
 }
 </style>

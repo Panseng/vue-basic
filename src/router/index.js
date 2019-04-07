@@ -16,7 +16,7 @@ export const basicRoutes = [
     redirect: '/a',
     meta: {
       title: 'NavToA',
-      icon: 'el-icon-location'
+      icon: '#icon-location'
     },
     children: [
       {
@@ -34,7 +34,7 @@ export const basicRoutes = [
     redirect: '/b/ba',
     meta: {
       title: 'NavToB',
-      icon: 'el-icon-menu'
+      icon: '#icon-menu'
     },
     children: [
       {
