@@ -35,10 +35,10 @@ export default {
     height: 25px;
     position: relative;
     top:40%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(180deg);
   }
   .troggle {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(0deg);
   }
 }
 </style>

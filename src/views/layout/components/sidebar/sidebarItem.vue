@@ -47,9 +47,13 @@ export default {
 </script>
 
 <style>
-.el-submenu__title, .el-tooltip, .el-menu-item {
-  padding-left: 10px !important;
+.el-submenu__title, ul[role="menubar"] > a > li, .el-tooltip {
+  padding-left: 8px !important;
 }
+ul[role="menu"] > a > li{
+  padding-left: 25px !important;
+}
+
 .el-menu--vertical {
   position: absolute !important;
   width: 50px !important;
